@@ -1,0 +1,26 @@
+.headline {
+
+    &__wrapper {
+        background-image: url("../img/title/img.png");
+        width: 100%;
+        height: 34rem;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: flex-end;
+        padding: 5rem 0;
+        background-position: center;
+        background-size: auto 100%;
+    }
+
+    &__name {
+        font-size: 4.5rem;
+        font-weight: 700;
+    }
+
+    @media(max-width: 769px) {
+        &__name {
+            font-size: 6rem;
+        }
+    }
+}

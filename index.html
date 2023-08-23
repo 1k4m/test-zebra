@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="css/style.css?v1.1">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+
+                <a class="header__logo logo" href="/">
+                    <img class="logo__image" src="img/logo/logo.png" />
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <section class="headline">
+            <div class="headline__wrapper">
+                <div class="container">
+
+                    <div class="headline__title">
+                        <h1 class="headline__name">Новости</h1>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="news" id="news" v-cloak>
+            <div class="container">
+                <div class="news__wrapper">
+
+                    <div class="news__item-wrapper">
+                        <a class="news__item" :href="newsItem.link" v-for="newsItem in newsItems" :key="newsItem.code">
+
+                            <div class="news__bg">
+                                <img class="news__img" v-if="newsItem.image" :src="newsItem.image" />
+                            </div>
+
+                            <div class="news__content">
+
+                                <div class="news__about article">
+
+                                    <div class="news__date date">
+
+                                        <span class="date__day">{{ formatDateDay(newsItem.date) }}</span>
+
+                                        <div class="date__numbers">
+                                            <span class="date__month">{{ formatDateMonth(newsItem.date) }}</span>
+                                            <span class="date__year">{{ formatDateYear(newsItem.date) }}</span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="news__name">{{ newsItem.name }}</div>
+
+                                    <div class="news__preview">{{ newsItem.previewText }}</div>
+
+                                </div>
+
+                                <div class="news__category">{{ newsItem.type.value }}</div>
+
+                            </div>
+
+                        </a>
+                    </div>
+
+                    <button class="news__btn" v-if="hasMorePages()" @click="loadNextPage">Загрузить ещё</button>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+
+                <a class="footer__logo logo article" href="/">
+                    <img class="logo__image" src="img/logo/logo.png" />
+                    <span class="footer__brand">© alpha, 2023</span>
+                </a>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="./js/news.js"></script>
+
+</body>
+
+</html>

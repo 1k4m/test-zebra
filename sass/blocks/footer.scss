@@ -1,0 +1,20 @@
+.footer {
+    background: var(--blue-light);
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 4rem 0;
+    }
+
+    &__logo {
+        width: 15rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__brand {
+        font-size: 2rem;
+        color: var(--grey);
+    }
+}

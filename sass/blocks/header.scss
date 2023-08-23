@@ -1,0 +1,12 @@
+.header {
+    box-shadow: var(--shadow-header);
+    position: sticky;
+
+    &__wrapper {
+        padding: 3rem 0px;
+    }
+
+    &__logo {
+        width: 18rem;
+    }
+}
